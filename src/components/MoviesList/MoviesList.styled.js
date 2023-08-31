@@ -12,7 +12,6 @@ export const MovieList = styled.ul`
 `;
 
 export const Item = styled.li`
-  // padding: 16px 0;
   position: relative;
   img {
     border-radius: 8px;

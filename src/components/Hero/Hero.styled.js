@@ -12,13 +12,4 @@ export const HeroCard = styled.img`
 
 export const LinkTo = styled(Link)`
   text-decoration: none;
-  /* color: #414141;
-  font-weight: 400;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  &:hover div {
-    opacity: 1;
-  } */
 `;
