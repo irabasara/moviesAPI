@@ -1,11 +1,18 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
+import { createGlobalStyle } from 'styled-components';
 
+export const GlobalStyle = createGlobalStyle`
+  body {
+    color: ${props => props.theme.color};
+  }
+`;
 export const Container = styled.div`
+  background-color: ${p => p.theme.background};
   // max-width: 1px;
   margin: 0 auto;
   padding: 0 16px;
-  background-image: url(https://images.unsplash.com/photo-1688719330946-f179bc8fc86c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80);
+  /* background-image: url(https://images.unsplash.com/photo-1688719330946-f179bc8fc86c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80); */
 `;
 
 export const Header = styled.header`
@@ -26,7 +33,9 @@ export const Link = styled(NavLink)`
   padding: 8px;
   border-radius: 4px;
   text-decoration: none;
-  color: black;
+  /* color: black; */
+  color: ${props => props.theme.color};
+
   font-weight: 500;
 
   &.active {

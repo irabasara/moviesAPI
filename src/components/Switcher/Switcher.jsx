@@ -1,10 +1,16 @@
-import { LightTheme } from './switcher.style';
+import { Moon, Sun } from './switcher.style';
+import { useTheme } from 'helpers/themeContext';
 
 export const Switcher = () => {
+  const { toogleTheme, themeMode, switchTheme } = useTheme();
+
   return (
-    <div>
-      <LightTheme size={24} />
-      {/* {<GrSun size={24} />} */}
+    <div onClick={toogleTheme}>
+      {themeMode === 'light' ? (
+        <Moon size={24} onClick={() => switchTheme('dark')} />
+      ) : (
+        <Sun size={24} onClick={() => switchTheme('light')} />
+      )}
     </div>
   );
 };

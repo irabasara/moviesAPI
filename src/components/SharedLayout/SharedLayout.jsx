@@ -1,15 +1,24 @@
-import { Suspense } from 'react';
+import { Suspense, useState } from 'react';
 import { Outlet } from 'react-router-dom';
-import { Container, Header, Link } from './sharedLayout.styled';
+import { Container, Header, Link, GlobalStyle } from './sharedLayout.styled';
 import { Switcher } from 'components/Switcher/Switcher';
+import { useTheme } from 'helpers/themeContext';
 
 const SharedLayout = () => {
+  const { theme } = useTheme();
+
   return (
-    <Container>
+    <Container theme={theme}>
+      <GlobalStyle theme={theme} />
+
       <Header>
         <nav>
-          <Link to="/">Home</Link>
-          <Link to="/movies">Movies</Link>
+          <Link to="/" theme={theme}>
+            Home
+          </Link>
+          <Link to="/movies" theme={theme}>
+            Movies
+          </Link>
         </nav>
         <Switcher />
       </Header>

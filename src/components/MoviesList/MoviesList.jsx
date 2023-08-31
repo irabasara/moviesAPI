@@ -13,7 +13,6 @@ const MoviesList = ({ movies }) => {
   return (
     <MovieList>
       {movies.map(({ title, name, id, poster_path, vote_average }) => {
-        // {const year = release_date.split('-');}
         return (
           <Item key={id}>
             <Link to={`/movies/${id}`} state={{ from: location }}>

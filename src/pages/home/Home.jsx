@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import fetchMovies from '../../helpers/fetchMovies';
 import MoviesList from 'components/MoviesList/MoviesList';
+import { Hero } from 'components/Hero/Hero';
 
 function Home() {
   const [movies, setMovies] = useState([]);
@@ -9,7 +10,12 @@ function Home() {
     fetchMovies('trending/all/week').then(({ results }) => setMovies(results));
   }, []);
 
-  return <MoviesList movies={movies} />;
+  return (
+    <>
+      <Hero movies={movies} />
+      <MoviesList movies={movies} />
+    </>
+  );
 }
 
 export default Home;
